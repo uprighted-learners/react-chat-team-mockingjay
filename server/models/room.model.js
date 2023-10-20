@@ -11,6 +11,10 @@ const RoomSchema = new mongoose.Schema({
     },
     addedUsers: {
         type: Array,
+    },
+    ownerId: {
+        type: mongoose.Types.ObjectId,
+        ref: "User",
     }
 });
 

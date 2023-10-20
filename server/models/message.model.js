@@ -16,6 +16,14 @@ const MessageSchema = new mongoose.Schema({
     body: {
         type: String,
         required: true,
+    },
+    ownerId: {
+        type: mongoose.Types.ObjectId,
+        ref: "User",
+    },
+    roomId: {
+        type: mongoose.Types.ObjectId,
+        ref: "Room",
     }
 });
 
