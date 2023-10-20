@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/user.model");
+const jwt = require("jsonwebtoken");
+// const bcrypt = require("bcrypt");
 
 router.post("/createUser", async (req, res) => {
     try {
@@ -14,9 +16,14 @@ router.post("/createUser", async (req, res) => {
 
         const newUser = await user.save();
 
+        const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
+            expiresIn: 7 * 24 * 60 * 60,
+        });
+
         res.json({
             message: "register endpoint",
             user: newUser,
+            token: token,
         });
     } catch (error) {
         res.status(500).json({ message: error.message });
