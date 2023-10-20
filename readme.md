@@ -15,14 +15,12 @@ Clone the following repository to your projects folder, then `cd` into `server` 
 Your message document in your `messages` collection should resemble the following:
 
 ```json
-
 {
-    "when": "2018-07-15T20:00:47.696Z",
-    "user": "John",
-    "room": "Main",
-    "body": "I really want to attend NASA's DEVELOP program this summer!"
+  "when": "2018-07-15T20:00:47.696Z",
+  "user": "John",
+  "room": "Main",
+  "body": "I really want to attend NASA's DEVELOP program this summer!"
 }
-
 ```
 
 ## User Schema
@@ -30,14 +28,12 @@ Your message document in your `messages` collection should resemble the followin
 Your user document in your `users` collection should resemble the following:
 
 ```json
-
 {
-    "firstName": "John",
-    "lastName": "Wick",
-    "email": "jwick@puppyfinder.com",
-    "password": "focusCommitment1979"
+  "firstName": "John",
+  "lastName": "Wick",
+  "email": "jwick@puppyfinder.com",
+  "password": "focusCommitment1979"
 }
-
 ```
 
 ## Room Schema
@@ -45,17 +41,16 @@ Your user document in your `users` collection should resemble the following:
 Your room document in your `rooms` collection should resemble the following:
 
 ```json
-
 {
-    "name": "Continental",
-    "description": "No business conducted",
-    "addedUsers": ["John Wick", "Winston", "Ms. Perkins"]
+  "name": "Continental",
+  "description": "No business conducted",
+  "addedUsers": ["John Wick", "Winston", "Ms. Perkins"]
 }
-
 ```
+
 > HINT
 > `user`, `room`, and `addedUsers` refer to connection between users and their room and messages.
-> It's usually a good idea to utilize _id's to reference those.
+> It's usually a good idea to utilize \_id's to reference those.
 
 ## Stories
 
@@ -134,3 +129,4 @@ The view sub-component should consist of an area where users can see all of the 
 
 - [ ] Add admin functionality check which allows an admin to delete any messages.
 
+- [ ] Comment added by Joey
