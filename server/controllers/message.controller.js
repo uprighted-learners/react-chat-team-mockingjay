@@ -1,4 +1,4 @@
-const router = require("express").Router();
+
 const Message = require("../models/message.model");
 const validateSession = require("../middleware/validate-session");
 
@@ -24,3 +24,8 @@ router.post("/createMessage", validateSession, async (req, res) => {
 });
 
 module.exports = router;
+=======
+// const Message = require("../models/message.model");
+module.exports = router;
+
+
