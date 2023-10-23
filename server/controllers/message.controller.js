@@ -1,4 +1,4 @@
-
+const router = require("express").Router();
 const Message = require("../models/message.model");
 const validateSession = require("../middleware/validate-session");
 
@@ -23,8 +23,21 @@ router.post("/createMessage", validateSession, async (req, res) => {
   }
 });
 
-module.exports = router;
-=======
+router.get("/view-all",  async (req, res) => {
+    try {
+      console.log("req.user", req.user);
+      const messages = await Message.find();
+  
+      res.json({ message: "success from get", messages: messages });
+    } catch (error) {
+      res.status(500).json({
+        message: error.message,
+      });
+    }
+  });
+
+
+
 // const Message = require("../models/message.model");
 module.exports = router;
 
