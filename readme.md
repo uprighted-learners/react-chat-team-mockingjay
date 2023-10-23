@@ -38,7 +38,7 @@ Your user document in your `users` collection should resemble the following:
     "password": "focusCommitment1979"
 }
 
-```
+```git 
 
 ## Room Schema
 
