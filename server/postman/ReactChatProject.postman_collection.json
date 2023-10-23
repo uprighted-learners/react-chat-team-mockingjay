@@ -106,6 +106,107 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Display All Rooms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{JWT}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/room/displayAllRooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"room",
+								"displayAllRooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Room",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{JWT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"UPDATED ROOM\",\n    \"description\": \"UPDATED\",\n    \"addedUsers\": [\"John Wick\", \"Winston\", \"Ms. Perkins\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/room/updateRoom/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"room",
+								"updateRoom",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6532be173788964d91b5e56e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Room",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{JWT}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/room/deleteRoom/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"room",
+								"deleteRoom",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6532be173788964d91b5e56e"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
