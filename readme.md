@@ -128,5 +128,3 @@ The view sub-component should consist of an area where users can see all of the 
 - [ ] The user should only be allowed to delete their own messages.
 
 - [ ] Add admin functionality check which allows an admin to delete any messages.
-
-- [ ] Comment added by Joey
