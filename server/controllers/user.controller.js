@@ -5,13 +5,14 @@ const jwt = require("jsonwebtoken");
 
 router.post("/createUser", async (req, res) => {
     try {
-        const { firstName, lastName, email, password } = req.body;
+        const { firstName, lastName, email, password, isAdmin } = req.body;
 
         const user = new User({
             firstName: firstName,
             lastName: lastName,
             email: email,
             password: password,
+            isAdmin: isAdmin,
         });
 
         const newUser = await user.save();
@@ -40,6 +41,9 @@ router.post("/login", async (req, res) => {
         if (!user) {
             throw new Error("User does not exist");
         }
+        const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin  }, process.env.JWT_SECRET, {
+            expiresIn: 7 * 24 * 60 * 60,
+        });
     
         const isPasswordAMatch = user.password === password;
         
@@ -51,6 +55,7 @@ router.post("/login", async (req, res) => {
         res.json({ 
             message: "signin endpoint", 
             user: user,
+            token: token,
         });
     } catch (error) {
         res.status(500).json({ message: error.message });

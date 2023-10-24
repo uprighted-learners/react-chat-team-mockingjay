@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Message = require("../models/message.model");
 const validateSession = require("../middleware/validate-session");
 const { validate } = require("../models/room.model");
+const userIsAdmin = require("../middleware/user-isadmin");
 
 router.post("/createMessage", validateSession, async (req, res) => {
     try {
@@ -36,7 +37,7 @@ router.get("/viewAllMessages",  async (req, res) => {
     }
 });
 
-router.patch("/updateMessage/:id", validateSession, async function (req, res) {
+router.patch("/updateMessage/:id", userIsAdmin, async function (req, res) {
     try {
         const id = req.params.id;
         const conditions = { _id: id};
@@ -61,7 +62,7 @@ router.patch("/updateMessage/:id", validateSession, async function (req, res) {
     }
 });
 
-router.delete("/deleteMessage/:id", validateSession, async (req, res) => {
+router.delete("/deleteMessage/:id", userIsAdmin, userIsAdmin, async (req, res) => {
     try {
         const id = req.params.id;
         const messages = await Message.deleteOne({_id: id });
