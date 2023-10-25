@@ -23,8 +23,7 @@ router.post("/createMessage", validateSession, async (req, res) => {
     }
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 router.get("/view-all",  async (req, res) => {
     try {
       console.log("req.user", req.user);
@@ -39,16 +38,15 @@ router.get("/view-all",  async (req, res) => {
   });
 
 
-=======
 
-
-module.exports = router;
->>>>>>> a538fa510a9445a4603f741f02d00e55d3b6dd25
-=======
 
 
 module.exports = router;
->>>>>>> a538fa510a9445a4603f741f02d00e55d3b6dd25
+
+
+
+module.exports = router;
+
 
 // const Message = require("../models/message.model");
 module.exports = router;
