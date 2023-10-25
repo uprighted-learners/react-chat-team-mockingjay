@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+// * User schema automatically generates an _id
+
 const UserSchema = new mongoose.Schema({
     firstName: {
         type: String,
