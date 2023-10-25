@@ -1,7 +1,9 @@
 const router = require("express").Router();
 const Room = require("../models/room.model");
-const validateSession = require("../middleware/validate-session")
+const validateSession = require("../middleware/validate-session");
+const userIsAdmin = require("../middleware/user-isadmin");
 
+// * Create a new room
 router.post("/createRoom", validateSession, async (req, res) => {
     try {
         const { name, description, addedUsers } = req.body;
@@ -25,6 +27,7 @@ router.post("/createRoom", validateSession, async (req, res) => {
     }
 })
 
+// * View all rooms
 router.get("/displayAllRooms", validateSession, async (req, res) => {
     try {
         const rooms = await Room.find();
@@ -35,7 +38,8 @@ router.get("/displayAllRooms", validateSession, async (req, res) => {
     }
 });
 
-router.patch("/updateRoom/:id", validateSession, async (req, res) => {
+// * Update a room only if a user is an admin
+router.patch("/updateRoom/:id", userIsAdmin, async (req, res) => {
     try {
         const id = req.params.id;
         const conditions = { _id: id, ownerId: req.user._id };
@@ -55,7 +59,8 @@ router.patch("/updateRoom/:id", validateSession, async (req, res) => {
     }
 })
 
-router.delete("/deleteRoom/:id", validateSession, async (req, res) => {
+// * Delete a room only if a user is an admin
+router.delete("/deleteRoom/:id", userIsAdmin, async (req, res) => {
     try {
         const id = req.params.id;
 

@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+// * Message Schema is referencing User and Room IDs
+
 const MessageSchema = new mongoose.Schema(
   {
     user: {

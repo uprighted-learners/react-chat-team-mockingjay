@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const User = require("../models/user.model");
 const jwt = require("jsonwebtoken");
-// const bcrypt = require("bcrypt");
 
+
+// * Creates a new user
 router.post("/createUser", async (req, res) => {
     try {
         const { firstName, lastName, email, password, isAdmin } = req.body;
@@ -31,6 +32,7 @@ router.post("/createUser", async (req, res) => {
     }
 });
 
+// * Checks for existing user and register login if user exists
 router.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;

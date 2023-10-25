@@ -4,6 +4,8 @@ const validateSession = require("../middleware/validate-session");
 const { validate } = require("../models/room.model");
 const userIsAdmin = require("../middleware/user-isadmin");
 
+
+// * Create a new message in a room
 router.post("/createMessage", validateSession, async (req, res) => {
     try {
         const roomId = req.params.id;
@@ -25,6 +27,7 @@ router.post("/createMessage", validateSession, async (req, res) => {
     }
 });
 
+// * View all message in a room
 router.get("/viewAllMessages",  async (req, res) => {
     try {
         const messages = await Message.find();
@@ -37,6 +40,7 @@ router.get("/viewAllMessages",  async (req, res) => {
     }
 });
 
+// * Update a message only if user is an admin
 router.patch("/updateMessage/:id", userIsAdmin, async function (req, res) {
     try {
         const id = req.params.id;
@@ -62,6 +66,7 @@ router.patch("/updateMessage/:id", userIsAdmin, async function (req, res) {
     }
 });
 
+// * Delete a message only if a user is an admin
 router.delete("/deleteMessage/:id", userIsAdmin, userIsAdmin, async (req, res) => {
     try {
         const id = req.params.id;
@@ -83,9 +88,6 @@ router.delete("/deleteMessage/:id", userIsAdmin, userIsAdmin, async (req, res) =
 
 
 
-module.exports = router;
-
-// const Message = require("../models/message.model");
 module.exports = router;
 
 
