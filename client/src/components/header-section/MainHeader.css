@@ -1,0 +1,15 @@
+.App-logo {
+    height: 400px;
+}
+
+header {
+    height: 450px;
+
+}
+
+.header-stripe {
+    height: 75px;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+}
+
