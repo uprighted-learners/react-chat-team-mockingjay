@@ -87,7 +87,34 @@ router.delete("/deleteMessage/:id", userIsAdmin, userIsAdmin, async (req, res) =
 });
 
 
+router.get("/view-all",  async (req, res) => {
+    try {
+      console.log("req.user", req.user);
+      const messages = await Message.find();
+  
+      res.json({ message: "success from get", messages: messages });
+    } catch (error) {
+      res.status(500).json({
+        message: error.message,
+      });
+    }
+  });
+
+
+
+
 
 module.exports = router;
 
+<<<<<<< HEAD
+
+
+module.exports = router;
+
+
+// const Message = require("../models/message.model");
+module.exports = router;
+
+=======
+>>>>>>> ae0ca1532b22f5cc8719281c621ef77cc2c958be
 
