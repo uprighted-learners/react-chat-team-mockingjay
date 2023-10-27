@@ -1,0 +1,13 @@
+.our-button{
+    background-color: var(--primary);
+    padding: 10px;
+    color: white ;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.our-button:hover {
+opacity: 0.8;
+
+}
