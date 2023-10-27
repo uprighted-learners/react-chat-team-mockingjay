@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+// * Room schema references the User that created the room in the ownerId
+
 const RoomSchema = new mongoose.Schema({
     name: {
         type: String,
