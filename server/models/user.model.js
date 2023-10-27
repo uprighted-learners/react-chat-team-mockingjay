@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+// * User schema automatically generates an _id
+
 const UserSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -17,6 +19,10 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false,
     }
 });
 

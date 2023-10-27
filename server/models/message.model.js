@@ -1,31 +1,27 @@
 const mongoose = require("mongoose");
 
-const MessageSchema = new mongoose.Schema({
-    when: {
-        type: String,
-        required: true,
-    },
+// * Message Schema is referencing User and Room IDs
+
+const MessageSchema = new mongoose.Schema(
+  {
     user: {
-        type: String,
-        required: true,
-    },
-    room: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     body: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     ownerId: {
-        type: mongoose.Types.ObjectId,
-        ref: "User",
+      type: mongoose.Types.ObjectId,
+      ref: "User",
     },
     roomId: {
-        type: mongoose.Types.ObjectId,
-        ref: "Room",
-    }
-});
-
+      type: mongoose.Types.ObjectId,
+      ref: "Room",
+    },
+  },
+  { timestamps: true }
+);
 
 module.exports = mongoose.model("Message", MessageSchema);
