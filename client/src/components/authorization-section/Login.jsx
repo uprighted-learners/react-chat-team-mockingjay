@@ -5,10 +5,6 @@ import OurButton from "../../ui/OurButton";
 import { API_USER_LOGIN } from "../../constants/endpoints";
 
 
-
-
-
-
 function Login(props) {
     const [email, setEmail] = useState("jwick@puppyfinder.com")
     const [password, setPassword] = useState("focusCommitment1979")
@@ -20,39 +16,32 @@ try {
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json")
         //BODY
+        
     const body = 
     {
-
         email: email,
-        password:  password
+        password: password
     }
-        
         // REQUEST OPTIONS
-
+    // console.log(body)
         const requestOption ={
                 method: "POST",
-                header: myHeaders,
+                headers: myHeaders,
                 body: JSON.stringify(body)
         };
+        console.log(requestOption)
         //SEND REQUEST
         const response = await fetch(API_USER_LOGIN, requestOption)
         // GET A RESPONSE
         const data = await response.json()
 
         //UPDATE THE TOKEN
-        console.log(data)
+        props.updateToken(data.token)
     
 } catch (error) {
     console.error(error)
 }
-
-
-
-
-
     }
-
-
 
   return (
     <>
@@ -96,18 +85,9 @@ try {
               onClick={handleSubmit}
             />
 
-
-
-
          </Form>
 </div>
-
-    </div>  
-    
-    
-    
-    
-    
+    </div>   
     </>
   );
 }
