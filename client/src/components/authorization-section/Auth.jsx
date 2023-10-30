@@ -5,7 +5,7 @@ function Auth(props) {
   return (
     <><h1>Hello from Auth</h1>
     
-    <Login     />
+    <Login  updateToken={props.updateToken}   />
     <Register   />
     
     
