@@ -4,12 +4,15 @@ const app = express();
 const messageController = require("./controllers/message.controller");
 const roomController = require("./controllers/room.controller");
 const userController = require("./controllers/user.controller");
+const cors = require("cors");
 
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT;
 const DBNAME = process.env.DBNAME;
 const DB_URL = process.env.DB_URL;
+app.use(cors())
+
 
 mongoose.connect(DB_URL + DBNAME);
 const db = mongoose.connection;
