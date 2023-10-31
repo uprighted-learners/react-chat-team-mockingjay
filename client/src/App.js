@@ -1,6 +1,8 @@
 import './App.css';
 import Auth from './components/authorization-section/Auth';
 import MainHeader from './components/header-section/MainHeader';
+import MainIndex from './components/main-section/MainIndex';
+import RoomCard from './components/main-section/RoomCard';
 import NavigationBar from './components/navigation-section/NavigationBar';
 import React, { useState, useEffect } from 'react';
 
@@ -26,7 +28,9 @@ function App() {
     <div>
       <MainHeader/>
       <NavigationBar/>
-      <Auth updateToken={updateToken} />
+      {/* <Auth updateToken={updateToken} /> */}
+      {/* <RoomCard/> */}
+      {token ? <MainIndex token={token} /> : <Auth updateToken={updateToken} />}
     </div>
   );
 }
