@@ -26,7 +26,7 @@ function MainIndex(props) {
       const data = await response.json();
       console.log(data);
       // Set State
-      setRoomFeedItems(data.rooms.reverse());
+      setRoomFeedItems(data.room.reverse());
       setUserId(data.userId);
     } catch (error) {
       console.error(error);
