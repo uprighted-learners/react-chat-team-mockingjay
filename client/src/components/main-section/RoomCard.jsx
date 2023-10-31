@@ -16,7 +16,7 @@ import {
    
     function handleShare() {
       //  Copy to the clipboard
-      navigator.clipboard.writeText("http://localhost:3000/feed/" + _id )
+      window.location.href = "http://localhost:3000/feed/" + _id;
     }
 
    async function handleDelete() {
@@ -64,7 +64,7 @@ import {
             </CardSubtitle>
             <CardText>{description}</CardText>
             
-            <Button>Join Room</Button>
+            <Button onClick={handleShare} >Join Room</Button>
             {props.userId === props.room?.ownerId?._id && (
               <Button color="danger">
                 Delete
