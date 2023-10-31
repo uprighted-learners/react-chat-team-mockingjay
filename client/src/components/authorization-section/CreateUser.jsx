@@ -44,7 +44,7 @@ const response = await fetch(API_USER_REGISTER, requestOption)
 const data = await response.json()
 // update the token
 
-// props.updateToken(data.token)
+props.updateToken(data.token)
 console.log(data);
 
 } catch (error) {
