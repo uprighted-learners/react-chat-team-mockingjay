@@ -19,13 +19,14 @@ function MainIndex(props) {
         method: "GET",
         headers: myHeaders,
       };
+      
       // Send Request
       const response = await fetch(API_ROOM_VIEW_ALL, requestOptions);
       //  Get A Response
       const data = await response.json();
       console.log(data);
       // Set State
-      setRoomFeedItems(data.rooms.reverse());
+      setRoomFeedItems(data.rooms);
       setUserId(data.userId);
     } catch (error) {
       console.error(error);

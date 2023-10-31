@@ -31,6 +31,7 @@ function App() {
       {/* <Auth updateToken={updateToken} /> */}
       {/* <RoomCard/> */}
       {token ? <MainIndex token={token} /> : <Auth updateToken={updateToken} />}
+      
     </div>
   );
 }
