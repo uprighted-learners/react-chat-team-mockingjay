@@ -31,7 +31,7 @@ try {
 
         const requestOption ={
                 method: "POST",
-                header: myHeaders,
+                headers: myHeaders,
                 body: JSON.stringify(body)
         };
         //SEND REQUEST
@@ -54,62 +54,62 @@ try {
 
 
 
-  return (
-    <>
-        <div className="d-flex justify-content-center mt-5">
-        <div 
-        className="secondary-background p-5 rounded"
-        style={{width:"450px",height: "370ppx"}}
->
+    return (
+        <>
+            <div className="d-flex justify-content-center mt-5">
+            <div 
+            className="secondary-background p-5 rounded"
+            style={{width:"450px",height: "370ppx"}}
+    >
 
-         <h2 className="text-center font-primary bold"> Login Form</h2>
-         <Form>
-            {/* Form group Email */}
-            <FormGroup>
-            <Label for="email"> Email  </Label>
-             <Input
-                 id="email"
-                 name="email"
-                 placeholder="Please Enter Email"
-                 type="email"    
-                 value={email}
-                 onChange={(e) => setEmail(e.target.value)}
-                 />
-            </FormGroup>
-        {/* Form Group email ending */ }
+            <h2 className="text-center font-primary bold"> Login Form</h2>
+            <Form>
+                {/* Form group Email */}
+                <FormGroup>
+                <Label for="email"> Email  </Label>
+                <Input
+                    id="email"
+                    name="email"
+                    placeholder="Please Enter Email"
+                    type="email"    
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    />
+                </FormGroup>
+            {/* Form Group email ending */ }
 
-            {/* Form group password */}
-            <FormGroup>
-            <Label for="password"> Password  </Label>
-             <Input
-                 id="password"
-                 name="password"
-                 placeholder="Enter Password"
-                 type="password" 
-                 value={password}
-                 onChange={(e) => setPassword(e.target.value)}
-                 />
-            </FormGroup>
-             {/* Form group password ending */}
-             <OurButton
-              title="Login"
-              onClick={handleSubmit}
-            />
-
-
+                {/* Form group password */}
+                <FormGroup>
+                <Label for="password"> Password  </Label>
+                <Input
+                    id="password"
+                    name="password"
+                    placeholder="Enter Password"
+                    type="password" 
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    />
+                </FormGroup>
+                {/* Form group password ending */}
+                <OurButton
+                title="Login"
+                onClick={handleSubmit}
+                />
 
 
-         </Form>
-</div>
 
-    </div>  
-    
-    
-    
-    
-    
-    </>
-  );
+
+            </Form>
+    </div>
+
+        </div>  
+        
+        
+        
+        
+        
+        </>
+    );
 }
 
 

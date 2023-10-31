@@ -106,7 +106,6 @@ router.get("/view-all",  async (req, res) => {
 
 module.exports = router;
 
-<<<<<<< HEAD
 
 
 module.exports = router;
@@ -115,6 +114,4 @@ module.exports = router;
 // const Message = require("../models/message.model");
 module.exports = router;
 
-=======
->>>>>>> ae0ca1532b22f5cc8719281c621ef77cc2c958be
 
