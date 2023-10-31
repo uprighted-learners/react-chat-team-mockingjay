@@ -32,7 +32,7 @@ router.get("/displayAllRooms", validateSession, async (req, res) => {
     try {
         const rooms = await Room.find();
 
-        res.json({message: "diplaying all rooms", rooms: rooms});
+        res.json({message: "diplaying all rooms", room: rooms});
     } catch (error) {
         res.status(500).json({ message: error.message, });
     }
