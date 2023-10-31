@@ -24,8 +24,8 @@ try {
     //Body
     const body = 
     {
-        firstname: firstname,
-        lastname: lastname,
+        firstName: firstname,
+        lastName: lastname,
         email: email,
         password: password
     };

@@ -37,6 +37,11 @@ try {
 
         //UPDATE THE TOKEN
         props.updateToken(data.token)
+
+
+
+        // naviagte to next page
+        // navigate("")
     
 } catch (error) {
     console.error(error)
