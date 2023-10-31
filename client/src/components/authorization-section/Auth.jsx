@@ -1,7 +1,5 @@
 import Login from "./Login";
 import Register from "./CreateUser";
-import React, { useState } from 'react';
-
 
 function Auth(props) {
 
@@ -20,6 +18,7 @@ function Auth(props) {
 
 
   return (
+
     <><h1>Hello from Auth</h1>
 
 {showLogin ? <Login  updateToken={props.updateToken} /> 
@@ -31,11 +30,9 @@ function Auth(props) {
     <Register  updateToken={props.updateToken} />
      */}
     
-    
+
     </>
-    
   );
 }
-
 
 export default Auth;

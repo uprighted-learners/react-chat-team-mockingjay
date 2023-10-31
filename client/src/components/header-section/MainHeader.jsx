@@ -1,16 +1,15 @@
 // TODO: CHANGE BEFORE SUBMITTING
+import headerPhoto from "../../assets/capitol.jpg";
 
 import "./MainHeader.css";
 function MainHeader(props) {
-    return (
-        <>
-            <header className="d-flex justify-content-center align-items-center secondary-background">
-            <div className="d-flex justify-content-center align-items-center primary-background header-stripe w-100">
-            {/* <img src={logo} alt="logo" className="App-logo" /> */}
-            </div>
-        </header>
-        </>
-    );
+  return (
+    <>
+      <header>
+        <img src={headerPhoto} className="headerPhoto" alt="district one" />
+      </header>
+    </>
+  );
 }
 
 export default MainHeader;

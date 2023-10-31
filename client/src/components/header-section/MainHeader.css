@@ -1,15 +1,11 @@
-.App-logo {
-    height: 400px;
+body {
+  background-color: var(--neutral);
 }
 
 header {
-    height: 450px;
-
+  height: 100%;
 }
 
-.header-stripe {
-    height: 75px;
-    border-top: 5px solid white;
-    border-bottom: 5px solid white;
+header img {
+  width: 100%;
 }
-
