@@ -6,7 +6,7 @@ import MainIndex from './components/main-section/MainIndex';
 
 import NavigationBar from './components/navigation-section/NavigationBar';
 import React, { useState, useEffect } from 'react';
-import MessageCard from "./components/main-section/MessageCard";
+import RoomPage from "./components/main-section/RoomPage";
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
       <Routes>
         <Route path="/auth" element={<Auth updateToken={updateToken} />} />
         <Route path="/feed" element={<MainIndex token={token} />} />
-        <Route path="/feed/:id" element={<MessageCard/>} />
+        <Route path="/feed/:id" element={<RoomPage token={token}/>} />
         
 
       </Routes>
