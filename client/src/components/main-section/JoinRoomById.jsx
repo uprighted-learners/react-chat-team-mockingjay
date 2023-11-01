@@ -3,13 +3,14 @@ import { API_ROOM_VIEW_BY_ID } from "../../constants/endpoints";
 import React, { useState, useEffect } from "react";
 import RoomCard from "./RoomCard";
 
+
 function JoinRoomById(props) {
     const params = useParams();
     console.log(params);
 
-    const [roomPost, setPetPost] = useState({});
+    const [roomPost, setRoomPost] = useState({});
 
-    async function fetchPetFeed() {
+    async function fetchRoomFeed() {
         try {
         // Headers
         const myHeaders = new Headers();
@@ -28,7 +29,7 @@ function JoinRoomById(props) {
         const data = await response.json();
         console.log(data);
         // Set State
-        setPetPost(data.room);
+        setRoomPost(data.room);
         
         } catch (error) {
         console.error(error);
@@ -39,12 +40,13 @@ function JoinRoomById(props) {
     //  putting [props.token] will make it so that it only runs when the token changes
     useEffect(() => {
         if (!props.token) return;
-        fetchPetFeed();
+        fetchRoomFeed();
     }, [props.token]);
 
     return (
         <>
         <RoomCard room={roomPost} />
+        
         </>
     );
 }
