@@ -8,15 +8,16 @@ import {
   } from "reactstrap";
   
   import { API_ROOM_DELETE_BY_ID } from "../../constants/endpoints";
+import { useNavigate } from "react-router-dom";
   
   function RoomCard(props) {
     console.log(props)
     const { name, description, addedUsers, _id } = props.room;
-
+    const navigate = useNavigate();
    
     function handleShare() {
-      //  Copy to the clipboard
-      window.location.href = "http://localhost:3000/feed/" + _id;
+      //  Join Room
+      navigate("/feed/" + _id);
     }
 
    async function handleDelete() {
@@ -39,7 +40,7 @@ import {
         console.log(data)
 
         // Refresh the feed
-        props.fetchPetFeed();
+        props.fetchRoomFeed();
 
       } catch (error) {
         console.error(error)
