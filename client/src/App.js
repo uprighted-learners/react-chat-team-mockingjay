@@ -7,6 +7,7 @@ import MainIndex from './components/main-section/MainIndex';
 import NavigationBar from './components/navigation-section/NavigationBar';
 import React, { useState, useEffect } from 'react';
 import RoomPage from "./components/main-section/RoomPage";
+import MessageFeed from "./components/main-section/MessageFeed";
 
 
 function App() {
@@ -39,9 +40,9 @@ function App() {
 
       </Routes>
       
-      
-      
       {token ? <MainIndex token={token} /> : <Auth updateToken={updateToken} />}
+      
+      
     </div>
   );
 }

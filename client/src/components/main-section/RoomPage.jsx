@@ -30,6 +30,7 @@ function RoomPage(props) {
       // Set State
       setMessageFeedItems(data.messages.reverse());
       setUserId(data.userId);
+      
     } catch (error) {
       console.error(error);
     }

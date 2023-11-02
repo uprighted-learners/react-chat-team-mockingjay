@@ -28,11 +28,11 @@ router.post("/createMessage", validateSession, async (req, res) => {
 });
 
 // * View all message in a room
-router.get("/viewAllMessages",  async (req, res) => {
+router.get("/viewAllMessages", validateSession,  async (req, res) => {
     try {
         const messages = await Message.find();
     
-        res.json({ message: "success from get", messages: messages });
+        res.json({ message: "success from get", messages: messages, userId: req.user._id });
         } catch (error) {
         res.status(500).json({
             message: error.message,
@@ -67,7 +67,7 @@ router.patch("/updateMessage/:id", validateSession, async function (req, res) {
 });
 
 // * Delete a message only if a user is an admin
-router.delete("/deleteMessage/:id", validateSession, async (req, res) => {
+router.delete("/deleteMessage/:id", validateSession,  async (req, res) => {
     try {
         const id = req.params.id;
         const messages = await Message.deleteOne({_id: id });
