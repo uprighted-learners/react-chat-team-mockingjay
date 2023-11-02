@@ -32,10 +32,24 @@ function Login(props) {
       // GET A RESPONSE
       const data = await response.json();
 
+<<<<<<< HEAD
       //UPDATE THE TOKEN
       props.updateToken(data.token);
     } catch (error) {
       console.error(error);
+=======
+        //UPDATE THE TOKEN
+        props.updateToken(data.token)
+
+
+
+        // naviagte to next page
+        // navigate("")
+    
+} catch (error) {
+    console.error(error)
+}
+>>>>>>> 56917139b5399dcdba6de199f72a9733a56dd948
     }
   }
 

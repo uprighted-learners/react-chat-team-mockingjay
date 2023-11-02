@@ -1,19 +1,21 @@
 import { Col, Container, Row } from "reactstrap";
-import RoomCreate from "./RoomCreate";
-import RoomFeed from "./RoomFeed";
-import { API_ROOM_VIEW_ALL } from "../../constants/endpoints";
+import MessageCreate from "./MessageCreate";
+import MessageFeed from "./MessageFeed";
+import { API_MESSAGE_VIEW_ALL } from "../../constants/endpoints";
 
 // imrse
 import React, { useState, useEffect } from "react";
 
-function MainIndex(props) {
-  const [roomFeedItems, setRoomFeedItems] = useState([]);
+function RoomPage(props) {
+  const [messageFeedItems, setMessageFeedItems] = useState([]);
   const [userId, setUserId] = useState("")
-  async function fetchRoomFeed() {
+  async function fetchMessageFeed() {
     try {
       // Headers
       const myHeaders = new Headers();
       myHeaders.append("Authorization", props.token);
+
+      console.log(props.token)
       // Request Options
       let requestOptions = {
         method: "GET",
@@ -21,12 +23,12 @@ function MainIndex(props) {
       };
       // debugger
       // Send Request
-      const response = await fetch(API_ROOM_VIEW_ALL, requestOptions);
+      const response = await fetch(API_MESSAGE_VIEW_ALL, requestOptions);
       //  Get A Response
       const data = await response.json();
       console.log(data);
       // Set State
-      setRoomFeedItems(data.room.reverse());
+      setMessageFeedItems(data.messages.reverse());
       setUserId(data.userId);
     } catch (error) {
       console.error(error);
@@ -37,7 +39,7 @@ function MainIndex(props) {
   //  putting [props.token] will make it so that it only runs when the token changes
   useEffect(() => {
     if (!props.token) return;
-    fetchRoomFeed();
+    fetchMessageFeed();
   }, [props.token]);
 
   return (
@@ -45,13 +47,13 @@ function MainIndex(props) {
       <Container className="mt-5">
         <Row>
           <Col md="4">
-            <RoomCreate token={props.token} fetchRoomFeed={fetchRoomFeed} />
+            <MessageCreate token={props.token} fetchMessageFeed={fetchMessageFeed} />
           </Col>
           <Col md="8">
-            <RoomFeed
-              roomFeedItems={roomFeedItems}
+            <MessageFeed
+              messageFeedItems={messageFeedItems}
               token={props.token}
-              fetchRoomFeed={fetchRoomFeed}
+              fetchMessageFeed={fetchMessageFeed}
               userId={userId}
             />
           </Col>
@@ -61,4 +63,4 @@ function MainIndex(props) {
   );
 }
 
-export default MainIndex;
+export default RoomPage;

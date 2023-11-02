@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 import OurButton from "../../ui/OurButton";
 import { API_USER_REGISTER } from "../../constants/endpoints";
+<<<<<<< HEAD
 import "./Auth.css";
 
 function Register(props) {
@@ -22,6 +23,29 @@ function Register(props) {
       const body = {
         firstname: firstname,
         lastname: lastname,
+=======
+
+
+function Register (props) {
+    const [email, setEmail] = useState("jwick@puppyfinder.com");
+    const [password, setPassword] = useState("focusCommitment1979");
+    const [firstname, setFirstName] = useState("John");
+    const [lastname, setLastName] = useState("Wick");
+
+  async   function handleSubmit() {
+// try catch 
+try {
+    
+    // Headers
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json")   
+
+    //Body
+    const body = 
+    {
+        firstName: firstname,
+        lastName: lastname,
+>>>>>>> 56917139b5399dcdba6de199f72a9733a56dd948
         email: email,
         password: password,
       };

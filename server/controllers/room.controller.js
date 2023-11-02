@@ -32,11 +32,30 @@ router.get("/displayAllRooms", validateSession, async (req, res) => {
     try {
         const rooms = await Room.find();
 
-        res.json({message: "diplaying all rooms", rooms: rooms});
+        res.json({message: "diplaying all rooms", room: rooms});
     } catch (error) {
         res.status(500).json({ message: error.message, });
     }
 });
+
+router.get("/viewRoomById/:id", validateSession, async (req, res) => {
+    try {
+    const id = req.params.id;
+
+    const room = await Room.findById(id).populate(
+        "ownerId"
+    );
+
+    res.json({ message: "success from get", room: room });
+    } catch (error) {
+    res.status(500).json({
+        message: error.message,
+    });
+    }
+});
+
+
+
 
 // * Update a room only if a user is an admin
 router.patch("/updateRoom/:id", userIsAdmin, async (req, res) => {
