@@ -1,6 +1,7 @@
 import Login from "./Login";
 import Register from "./CreateUser";
 import { useState } from "react";
+import "./Auth.css";
 
 function Auth(props) {
   const [showLogin, setShowLogin] = useState(false);

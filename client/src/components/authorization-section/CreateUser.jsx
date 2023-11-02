@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-
 import { Form, FormGroup, Label, Input } from "reactstrap";
 import OurButton from "../../ui/OurButton";
 import { API_USER_REGISTER } from "../../constants/endpoints";
-<<<<<<< HEAD
-import "./Auth.css";
 
 function Register(props) {
   const [email, setEmail] = useState("jwick@puppyfinder.com");
@@ -21,31 +18,8 @@ function Register(props) {
 
       //Body
       const body = {
-        firstname: firstname,
-        lastname: lastname,
-=======
-
-
-function Register (props) {
-    const [email, setEmail] = useState("jwick@puppyfinder.com");
-    const [password, setPassword] = useState("focusCommitment1979");
-    const [firstname, setFirstName] = useState("John");
-    const [lastname, setLastName] = useState("Wick");
-
-  async   function handleSubmit() {
-// try catch 
-try {
-    
-    // Headers
-    let myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json")   
-
-    //Body
-    const body = 
-    {
         firstName: firstname,
         lastName: lastname,
->>>>>>> 457ac70ab91d8d30dfe95f4cefa9f5624568f6a6
         email: email,
         password: password,
       };
@@ -77,7 +51,7 @@ try {
           className="secondary-background p-5 rounded"
           style={{ width: "450px", height: "370ppx" }}
         >
-          <h2>Registration Form</h2>
+          <h2 className="text-center font-primary bold">Registration Form</h2>
           <Form>
             {/* Form group firstname */}
             <FormGroup>
