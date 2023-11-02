@@ -87,7 +87,7 @@ function MessageCard(props) {
       console.error(error);
     }
   }
-  console.log(props)
+  console.log(props.userId)
   return (
     <>
       <Card
@@ -131,14 +131,14 @@ function MessageCard(props) {
           <CardText>{message}</CardText>
         )}
         <Button onClick={handleShare}>Share Post</Button>
-        {props.userId === props.message?.ownerId?._id && (
+        {props.userId === props.message?.ownerId && (
           <Button color="danger" onClick={handleDelete}>
             Delete
           </Button>
         )}
-
+        
         {/* Edit Button */}
-        {props.userId === props.message?.ownerId?._id && (
+        {props.userId === props.message?.ownerId && (
           <Button color="warning" onClick={handleToggleEdit}>
             Edit
           </Button>

@@ -20,7 +20,7 @@ function Auth(props) {
 
   return (
 
-    <><h1>Hello from Auth</h1>
+    <>
 
 {showLogin ? <Login  updateToken={props.updateToken} /> 
 : <Register updateToken={props.updateToken} />}
