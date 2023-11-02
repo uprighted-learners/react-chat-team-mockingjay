@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
     Card,
     CardBody,
@@ -158,3 +159,13 @@ import {
   
   export default MessageCard;
   
+=======
+function MessageCard(props) {
+  return (
+    <><h1>Hello from MessageCard</h1></>
+  );
+}
+
+
+export default MessageCard;
+>>>>>>> 17e6140d49ab52abe8e0c0a28be6c888ac5b294b
