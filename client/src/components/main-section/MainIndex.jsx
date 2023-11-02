@@ -1,10 +1,11 @@
-import { Col, Container, Row } from "reactstrap";
+import { Col, Container, NavLink, Row } from "reactstrap";
 import RoomCreate from "./RoomCreate";
 import RoomFeed from "./RoomFeed";
 import { API_ROOM_VIEW_ALL } from "../../constants/endpoints";
 
 // imrse
 import React, { useState, useEffect } from "react";
+import ReturnToAuth from "../ReturnToAuth";
 
 function MainIndex(props) {
   const [roomFeedItems, setRoomFeedItems] = useState([]);
@@ -39,6 +40,8 @@ function MainIndex(props) {
     if (!props.token) return;
     fetchRoomFeed();
   }, [props.token]);
+
+  if (!props.token) return <ReturnToAuth />;
 
   return (
     <>

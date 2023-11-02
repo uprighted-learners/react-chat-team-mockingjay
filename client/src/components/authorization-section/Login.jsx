@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 import OurButton from "../../ui/OurButton";
 import { API_USER_LOGIN } from "../../constants/endpoints";
+import { useNavigate } from "react-router-dom";
 
 
 function Login(props) {
     const [email, setEmail] = useState("jwick@puppyfinder.com")
     const [password, setPassword] = useState("focusCommitment1979")
-
+    const navigate = useNavigate();
 
     async function handleSubmit() {
 try {
@@ -37,6 +38,7 @@ try {
 
         //UPDATE THE TOKEN
         props.updateToken(data.token)
+        navigate("/feed");
 
 
 

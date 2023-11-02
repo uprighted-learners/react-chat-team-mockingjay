@@ -34,7 +34,7 @@ function App() {
       <Routes>
         <Route path="/auth" element={<Auth updateToken={updateToken} />} />
         <Route path="/feed" element={<MainIndex token={token} />} />
-        <Route path="/feed/:id" element={<MessageCard/>} />
+        <Route path="/feed/:id" element={<MessageCard token={token}/>} />
         
 
       </Routes>
