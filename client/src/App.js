@@ -41,7 +41,7 @@ function App() {
       
       
       
-      {/* {token ? <MainIndex token={token} /> : <Auth updateToken={updateToken} />} */}
+      {token ? <MainIndex token={token} /> : <Auth updateToken={updateToken} />}
     </div>
   );
 }

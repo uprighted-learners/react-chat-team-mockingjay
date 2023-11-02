@@ -6,5 +6,5 @@ export const  API_ROOM_REGISTER = "http://localhost:4000/room/createRoom";
 export const  API_ROOM_DELETE_BY_ID = "http://localhost:4000/room/deleteRoom/:id";
 export const  API_ROOM_VIEW_BY_ID = "http://localhost:4000/room/viewRoomById/:id";
 export const  API_MESSAGE_CREATE = "http://localhost:4000/message/createMessage";
-export const  API_MESSAGE_UPDATE_BY_ID = "http://localhost:4000/message/updateMessage/:id";
-export const  API_MESSAGE_DELETE_BY_ID = "http://localhost:4000/message/deleteMessage/:id";
+export const  API_MESSAGE_UPDATE_BY_ID = "http://localhost:4000/message/updateMessage";
+export const  API_MESSAGE_DELETE_BY_ID = "http://localhost:4000/message/deleteMessage";

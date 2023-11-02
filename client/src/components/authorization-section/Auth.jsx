@@ -19,12 +19,6 @@ function Auth(props) {
 
 
   return (
-<<<<<<< HEAD
-    <>
-      <h1>Hello from District One</h1>
-      <Login updateToken={props.updateToken} />
-      <Register />
-=======
 
     <><h1>Hello from Auth</h1>
 
@@ -38,7 +32,6 @@ function Auth(props) {
      */}
     
 
->>>>>>> 56917139b5399dcdba6de199f72a9733a56dd948
     </>
   );
 }
