@@ -61,7 +61,7 @@ function MessageCreate(props) {
           </FormGroup>
           {/* Form Group Title End */}
           {/* Form Group Description */}
-          <FormGroup>
+          {/* <FormGroup>
             <Label for="room">Room Name</Label>
             <Input
               type="text"
@@ -71,7 +71,7 @@ function MessageCreate(props) {
               value={room}
               onChange={(e) => setRoom(e.target.value)}
             />
-          </FormGroup>
+          </FormGroup> */}
           {/* Form Group Description End */}
           {/* Form Group ImageURL */}
           <FormGroup>

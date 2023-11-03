@@ -9,6 +9,7 @@ import React, { useState, useEffect } from "react";
 function RoomPage(props) {
   const [messageFeedItems, setMessageFeedItems] = useState([]);
   const [userId, setUserId] = useState("")
+  const [isAdmin, setIsAdmin] = useState(false)
   async function fetchMessageFeed() {
     try {
       // Headers
@@ -30,7 +31,8 @@ function RoomPage(props) {
       // Set State
       setMessageFeedItems(data.messages.reverse());
       setUserId(data.userId);
-      
+      setIsAdmin(data.isAdmin)
+      console.log(data.userId);
     } catch (error) {
       console.error(error);
     }
@@ -56,6 +58,7 @@ function RoomPage(props) {
               token={props.token}
               fetchMessageFeed={fetchMessageFeed}
               userId={userId}
+              isAdmin={isAdmin}
             />
           </Col>
         </Row>

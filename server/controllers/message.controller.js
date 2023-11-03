@@ -32,13 +32,15 @@ router.get("/viewAllMessages", validateSession,  async (req, res) => {
     try {
         const messages = await Message.find();
     
-        res.json({ message: "success from get", messages: messages, userId: req.user._id });
+        res.json({ message: "success from get", messages: messages, userId: req.user._id, isAdmin: req.user.isAdmin });
+        
         } catch (error) {
         res.status(500).json({
             message: error.message,
         });
     }
 });
+
 
 // * Update a message only if user is an admin
 router.patch("/updateMessage/:id", validateSession, async function (req, res) {

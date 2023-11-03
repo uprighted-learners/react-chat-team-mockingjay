@@ -1,7 +1,7 @@
 import MessageCard from "./MessageCard";
 
 function MessageFeed(props) {
-    console.log(props)
+    console.log(props.isAdmin)
   return (
     <>
       {props.messageFeedItems.map((message, index) => (
@@ -12,6 +12,7 @@ function MessageFeed(props) {
           token={props.token}
           fetchMessageFeed={props.fetchMessageFeed}
           userId={props.userId}
+          isAdmin={props.isAdmin}
         />
       ))}
     </>
