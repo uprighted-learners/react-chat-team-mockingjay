@@ -16,7 +16,8 @@ import React, { useState } from "react";
 
 function MessageCard(props) {
   console.log(props)
-  const { user, room, message, _id } = props.message;
+  const { user, room, message, _id  } = props.message;
+  
   const [editModeEnabled, setEditModeEnabled] = useState(false);
 
   const [userInput, setUserInput] = useState(user);
@@ -41,7 +42,7 @@ function MessageCard(props) {
     const body = {
       user: userInput,
       room: room,
-      body: message
+      body: message,
     };
     // Request Options
     const requestOptions = {
@@ -87,7 +88,7 @@ function MessageCard(props) {
       console.error(error);
     }
   }
-  console.log(props.userId)
+  console.log(props.isAdmin)
   return (
     <>
       <Card
@@ -131,14 +132,14 @@ function MessageCard(props) {
           <CardText>{message}</CardText>
         )}
         <Button onClick={handleShare}>Share Post</Button>
-        {props.userId === props.message?.ownerId && (
+        {(props.userId === props.message?.ownerId || true === props.isAdmin) && (
           <Button color="danger" onClick={handleDelete}>
             Delete
           </Button>
         )}
         
         {/* Edit Button */}
-        {props.userId === props.message?.ownerId && (
+        {(props.userId === props.message?.ownerId || true === props.isAdmin) && (
           <Button color="warning" onClick={handleToggleEdit}>
             Edit
           </Button>
